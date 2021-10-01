@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+// Colors
+$colors: (
+    'blue': #0079ff,
+    'white': #ffffff,
+    'lightMode': (
+        'greyishPurple': #697c9a,
+        'purple': #4b6a9b,
+        'darkPurple': #2b3442,
+        'greyishWhite': #f6f8ff,
+        'almostWhite': #fefefe,
+    ),
+    'darkMode': (
+        'darkDMPurple': #141d2f,
+        'dmPurple': #1e2a47,
+    ),
+);
+
+// Fonts
+$fontFamily: 'Space Mono', monospace;
+$fontWeight: (
+    'regular': 400,
+    'bold': 700,
+);
+$fontSize: (
+    'xxl': 26px,
+    'xl': 22px,
+    'l': 16px,
+    'm': 15px,
+    's': 13px,
+    'xs': 11px,
+);
+$lineHeight: (
+    'lineHeightOne': 38px,
+    'lineHeightTwo': 33px,
+    'lineHeightThree': 24px,
+    'lineHeightFour': 20px,
+    'textLineHeight': 25px,
+);
