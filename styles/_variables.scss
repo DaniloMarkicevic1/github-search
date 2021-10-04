@@ -9,6 +9,7 @@ $colors: (
         'darkPurple': #2b3442,
         'greyishWhite': #f6f8ff,
         'almostWhite': #fefefe,
+        'devFinder': #222731,
     ),
     'darkMode': (
         'darkDMPurple': #141d2f,
@@ -29,6 +30,7 @@ $fontSize: (
     'm': 15px,
     's': 13px,
     'xs': 11px,
+    'button': 14px,
 );
 $lineHeight: (
     'lineHeightOne': 38px,
@@ -36,4 +38,9 @@ $lineHeight: (
     'lineHeightThree': 24px,
     'lineHeightFour': 20px,
     'textLineHeight': 25px,
+);
+
+$borderRadius: (
+    'main': 15px,
+    'secondary': 10px,
 );

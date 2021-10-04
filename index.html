@@ -10,13 +10,13 @@
             href="./assets/favicon-32x32.png"
         />
         <link rel="stylesheet" href="styles/css/css.css" />
-        <title></title>
+        <title>GitSearch</title>
     </head>
-    <body>
+    <body class="dark">
         <div class="container">
             <header class="header">
                 <div class="mainTitle">devfinder</div>
-                <div class="lightIcon">
+                <div class="toggle">
                     Light
                     <img src="./assets/icon-sun.svg" alt="" />
                 </div>
@@ -26,61 +26,83 @@
                 </div> -->
             </header>
             <form class="searchForm">
+                <img src="./assets/icon-search.svg" />
                 <input
                     type="text"
                     name="search"
                     id="searchInput"
-                    placeholder="Search GitHub username..."
+                    placeholder="Search GitHub username…"
                 />
                 <button class="searchBtn">Search</button>
-                <!-- search icon -->
             </form>
-            <section class="user">
-                <div>
-                    <img src="API" alt="" />
-                    <h1>Octocat</h1>
-                    <h3><a href="#">@octocat</a></h3>
-                    <h2>Joined</h2>
-                </div>
-            </section>
-            <article class="text">
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Facilis illo maiores modi provident praesentium fugiat.
-                </p>
-            </article>
-            <section class="stats">
-                <div>
-                    <h4>Repos</h4>
-                    <p>6</p>
-                </div>
-                <div>
-                    <h4>Followers</h4>
-                    <p>20</p>
-                </div>
-                <div>
-                    <h4>Following</h4>
-                    <p>1</p>
-                </div>
-            </section>
-            <section class="links">
-                <div>
-                    <img src="./assets/icon-location.svg" alt="location" />
-                    <p>location</p>
-                </div>
-                <div>
-                    <img src="./assets/icon-website.svg" alt="website" />
-                    <p>website</p>
-                </div>
-                <div>
-                    <img src="./assets/icon-twitter.svg" alt="twitter-icon" />
-                    <p>Twitter</p>
-                </div>
-                <div>
-                    <img src="./assets/icon-company.svg" alt="company-icon" />
-                    <p>company</p>
-                </div>
-            </section>
+            <div class="profile-container">
+                <section class="user">
+                    <div>
+                        <img src="API" alt="" />
+                        <p>Octocat</p>
+                        <p><a href="#">@octocat</a></p>
+                        <p>Joined 25 Jan 2011</p>
+                    </div>
+                </section>
+                <article class="text">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing
+                        elit. Donec odio. Quisque volutpat mattis eros.
+                    </p>
+                </article>
+                <section class="stats">
+                    <div class="stats-container">
+                        <div>
+                            <h4>Repos</h4>
+                            <p>6</p>
+                        </div>
+                        <div>
+                            <h4>Followers</h4>
+                            <p>20</p>
+                        </div>
+                        <div>
+                            <h4>Following</h4>
+                            <p>1</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="links">
+                    <div class="links-left">
+                        <div>
+                            <img
+                                class="l1"
+                                src="./assets/icon-location.svg"
+                                alt="location"
+                            />
+                            <p>location</p>
+                        </div>
+                        <div>
+                            <img
+                                src="./assets/icon-website.svg"
+                                alt="website"
+                            />
+                            <p>website</p>
+                        </div>
+                    </div>
+                    <div class="links-right">
+                        <div>
+                            <img
+                                src="./assets/icon-twitter.svg"
+                                alt="twitter-icon"
+                            />
+                            <p>Twitter</p>
+                        </div>
+                        <div>
+                            <img
+                                src="./assets/icon-company.svg"
+                                alt="company-icon"
+                            />
+                            <p>company</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
+        <script src="/scripts/script.js"></script>
     </body>
 </html>
