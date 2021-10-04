@@ -2,7 +2,13 @@
 let body = document.querySelector('body');
 let toggle = document.querySelector('.toggle');
 let form = document.querySelector('.searchForm');
-
+// Username,Link, Joined
+let userName = document.querySelector('.userName');
+let userLink = document.querySelector('.userLink');
+let userJoined = document.querySelector('.userDate');
+let avatar = document.querySelector('.avatar');
+// Bio
+let bio = document.querySelector('.bio');
 // Links
 let city = document.querySelector('.location');
 let website = document.querySelector('.website');
@@ -24,20 +30,35 @@ toggle.addEventListener('click', (e) => {
         body.classList.remove('light');
     }
 });
-
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-});
+    let value = document.querySelector('input').value;
+    console.log(value);
+    fetch(`../${value}.json`)
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+            userName.innerHTML = data.name;
+            userLink.href = data.html_url;
+            avatar.src = data.avatar_url;
+            userJoined.innerHTML = data.created_at;
+            repos.innerHTML = data.public_repos;
+            following.innerHTML = data.followers;
+            followers.innerHTML = data.following;
+            city.innerHTML = data.location;
+            website.innerHTML = data.blog;
+            website.href = data.blog;
+            company.innerHTML = data.company;
+            if (data.bio === null) {
+                bio.innerHTML = 'No bio in description';
+            } else {
+                bio.innerHTML = data.bio;
+            }
 
-// fetch(`https://api.github.com/users/octocat`)
-//     .then((response) => response.json())
-// .then((data) => {
-// repos.innerHTML = data.repos;
-// followers.innerHTML = data.followers;
-// following.innerHTML = data.following;
-// city.innerHTML = data.
-// website.innerHTML = data.
-// company.innerHTML = data.
-// twitter.innerHTML = data.
-//     data.resources;
-// });
+            if (data.twitter_username == null) {
+                twitter.innerHTML = 'Not Available';
+            } else {
+                twitter.innerHTML = data.twitter_username;
+            }
+        });
+});

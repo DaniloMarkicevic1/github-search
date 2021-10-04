@@ -118,6 +118,17 @@
     padding: 0 159px 0 0;
   }
 }
+* body .container .profile-container .user .avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+@media screen and (min-width: 768px) {
+  * body .container .profile-container .user .avatar {
+    width: 117px;
+    height: 117px;
+  }
+}
 * body .container .profile-container .user .userName {
   font-size: 16px;
   font-weight: 700;
