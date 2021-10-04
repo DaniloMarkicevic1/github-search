@@ -27,8 +27,11 @@
   font-weight: 700;
   font-size: 26px;
 }
+* body .container .header .toggle:hover {
+  cursor: url("/assets/pointer.png"), pointer;
+}
 * body .container .header .toggle {
-  font-weight: 400;
+  font-weight: 700;
   font-size: 13px;
   display: flex;
   flex-direction: row;
@@ -51,6 +54,12 @@
   left: 16px;
   bottom: 20px;
 }
+@media screen and (min-width: 768px) {
+  * body .container .searchForm img {
+    left: 32px;
+    bottom: 22px;
+  }
+}
 * body .container .searchForm input {
   outline: none;
   border: none;
@@ -61,6 +70,12 @@
   line-height: 25px;
   letter-spacing: 0;
 }
+@media screen and (min-width: 768px) {
+  * body .container .searchForm input {
+    font-size: 18px;
+    padding: 22px 121px 22px 80px;
+  }
+}
 * body .container .searchForm button {
   background-color: #0079ff;
   border: none;
@@ -68,8 +83,17 @@
   border-radius: 10px;
   padding: 12.5px 16px;
   font-size: 14px;
+  font-weight: 700;
   right: 7px;
   bottom: 7.5px;
+}
+@media screen and (min-width: 768px) {
+  * body .container .searchForm button {
+    padding: 12.5px 23px 13.5px 24px;
+    bottom: 9.5px;
+    right: 10px;
+    font-size: 16px;
+  }
 }
 * body .container .profile-container {
   border-radius: 15px;
@@ -94,9 +118,39 @@
     padding: 0 159px 0 0;
   }
 }
+* body .container .profile-container .user .userName {
+  font-size: 16px;
+  font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  * body .container .profile-container .user .userName {
+    font-size: 26px;
+  }
+}
+* body .container .profile-container .user .userLink {
+  font-size: 13px;
+}
+@media screen and (min-width: 768px) {
+  * body .container .profile-container .user .userLink {
+    font-size: 16px;
+  }
+}
+* body .container .profile-container .user .userDate {
+  font-size: 13px;
+}
+@media screen and (min-width: 768px) {
+  * body .container .profile-container .user .userDate {
+    font-size: 15px;
+  }
+}
 * body .container .profile-container .text {
   padding: 33px 0 0;
   font-size: 13px;
+}
+@media screen and (min-width: 768px) {
+  * body .container .profile-container .text {
+    font-size: 15px;
+  }
 }
 * body .container .profile-container .stats {
   padding: 23px 0 0 0;
@@ -115,8 +169,18 @@
   font-size: 11px;
   font-weight: 400;
 }
+@media screen and (min-width: 768px) {
+  * body .container .profile-container .stats .stats-container div h4 {
+    font-size: 13px;
+  }
+}
 * body .container .profile-container .stats .stats-container div p {
   font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  * body .container .profile-container .stats .stats-container div p {
+    font-size: 22px;
+  }
 }
 * body .container .profile-container .links {
   padding: 20px 0 32px 1px;
@@ -152,13 +216,21 @@
 * body .container .profile-container .links .links-right div p {
   font-size: 13px;
 }
+@media screen and (min-width: 768px) {
+  * body .container .profile-container .links .links-left div p,
+* body .container .profile-container .links .links-right div p {
+    font-size: 15px;
+  }
+}
 * .dark {
+  transition: ease 0.5s;
   background-color: #141d2f;
 }
 * .dark .container {
   color: #ffffff;
 }
 * .dark .searchForm input {
+  transition: ease 0.5s;
   background-color: #1e2a47;
   color: #ffffff;
 }
@@ -170,21 +242,29 @@
   color: #ffffff;
 }
 * .dark .profile-container {
+  transition: ease 0.5s;
   background-color: #1e2a47;
 }
 * .dark .profile-container .stats .stats-container {
+  transition: ease 0.5s;
   background-color: #141d2f;
 }
 * .light {
+  transition: ease 0.5s;
   background-color: #f6f8ff;
 }
 * .light .container {
+  transition: ease 0.5s;
   color: #222731;
 }
 * .light .container .header .toggle {
   color: #4b6a9b;
 }
+* .light .container .header .toggle:hover {
+  color: #222731;
+}
 * .light .container .searchForm input {
+  transition: ease 0.5s;
   box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
   background-color: #fefefe;
   color: #4b6a9b;
@@ -197,11 +277,13 @@
   color: #ffffff;
 }
 * .light .container .profile-container {
+  transition: ease 0.5s;
   box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
   background-color: #fefefe;
   color: #4b6a9b;
 }
 * .light .container .profile-container .stats .stats-container {
+  transition: ease 0.5s;
   background-color: #f6f8ff;
 }
 * .light .container .profile-container .stats .stats-container div p {

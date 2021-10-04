@@ -16,7 +16,6 @@ $colors: (
         'dmPurple': #1e2a47,
     ),
 );
-
 // Fonts
 $fontFamily: 'Space Mono', monospace;
 $fontWeight: (
@@ -31,6 +30,7 @@ $fontSize: (
     's': 13px,
     'xs': 11px,
     'button': 14px,
+    'input': 18px,
 );
 $lineHeight: (
     'lineHeightOne': 38px,
@@ -39,8 +39,8 @@ $lineHeight: (
     'lineHeightFour': 20px,
     'textLineHeight': 25px,
 );
-
 $borderRadius: (
     'main': 15px,
     'secondary': 10px,
 );
+$cursor: url('/assets/pointer.png'), pointer;

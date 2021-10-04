@@ -22,9 +22,11 @@
                     font-weight: map-get($fontWeight, 'bold');
                     font-size: map-get($fontSize, 'xxl');
                 }
-
+                .toggle:hover {
+                    cursor: $cursor;
+                }
                 .toggle {
-                    font-weight: map-get($fontWeight, 'regular');
+                    font-weight: map-get($fontWeight, 'bold');
                     font-size: map-get($fontSize, 's');
                     display: flex;
                     flex-direction: row;
@@ -46,6 +48,10 @@
                     height: 20px;
                     left: 16px;
                     bottom: 20px;
+                    @media screen and (min-width: 768px) {
+                        left: 32px;
+                        bottom: 22px;
+                    }
                 }
                 input {
                     outline: none;
@@ -56,8 +62,11 @@
                     font-size: map-get($fontSize, 's');
                     line-height: map-get($lineHeight, 'textLineHeight');
                     letter-spacing: 0;
+                    @media screen and (min-width: 768px) {
+                        font-size: map-get($fontSize, 'input');
+                        padding: 22px 121px 22px 80px;
+                    }
                 }
-
                 button {
                     background-color: map-get($colors, 'blue');
                     border: none;
@@ -65,8 +74,15 @@
                     border-radius: map-get($borderRadius, 'secondary');
                     padding: 12.5px 16px;
                     font-size: map-get($fontSize, 'button');
+                    font-weight: map-get($fontWeight, 'bold');
                     right: 7px;
                     bottom: 7.5px;
+                    @media screen and (min-width: 768px) {
+                        padding: 12.5px 23px 13.5px 24px;
+                        bottom: 9.5px;
+                        right: 10px;
+                        font-size: map-get($fontSize, 'l');
+                    }
                 }
             }
             .profile-container {
@@ -84,10 +100,32 @@
                     @media screen and (min-width: 768px) {
                         padding: 0 159px 0 0;
                     }
+                    .userName {
+                        font-size: map-get($fontSize, 'l');
+                        font-weight: map-get($fontWeight, 'bold');
+                        @media screen and (min-width: 768px) {
+                            font-size: map-get($fontSize, 'xxl');
+                        }
+                    }
+                    .userLink {
+                        font-size: map-get($fontSize, 's');
+                        @media screen and (min-width: 768px) {
+                            font-size: map-get($fontSize, 'l');
+                        }
+                    }
+                    .userDate {
+                        font-size: map-get($fontSize, 's');
+                        @media screen and (min-width: 768px) {
+                            font-size: map-get($fontSize, 'm');
+                        }
+                    }
                 }
                 .text {
                     padding: 33px 0 0;
                     font-size: map-get($fontSize, 's');
+                    @media screen and (min-width: 768px) {
+                        font-size: map-get($fontSize, 'm');
+                    }
                 }
                 .stats {
                     padding: 23px 0 0 0;
@@ -102,9 +140,15 @@
                             h4 {
                                 font-size: map-get($fontSize, 'xs');
                                 font-weight: map-get($fontWeight, 'regular');
+                                @media screen and (min-width: 768px) {
+                                    font-size: map-get($fontSize, 's');
+                                }
                             }
                             p {
                                 font-weight: map-get($fontWeight, 'bold');
+                                @media screen and (min-width: 768px) {
+                                    font-size: map-get($fontSize, 'xl');
+                                }
                             }
                         }
                     }
@@ -133,6 +177,9 @@
                             }
                             p {
                                 font-size: map-get($fontSize, 's');
+                                @media screen and (min-width: 768px) {
+                                    font-size: map-get($fontSize, 'm');
+                                }
                             }
                         }
                     }
@@ -142,12 +189,14 @@
     }
     // ******************Dark Mode******************** //
     .dark {
+        transition: ease 0.5s;
         background-color: map-get($colors, 'darkMode', 'darkDMPurple');
         .container {
             color: map-get($colors, 'white');
         }
         .searchForm {
             input {
+                transition: ease 0.5s;
                 background-color: map-get($colors, 'darkMode', 'dmPurple');
                 color: map-get($colors, 'white');
             }
@@ -160,9 +209,11 @@
             }
         }
         .profile-container {
+            transition: ease 0.5s;
             background-color: map-get($colors, 'darkMode', 'dmPurple');
             .stats {
                 .stats-container {
+                    transition: ease 0.5s;
                     background-color: map-get(
                         $colors,
                         'darkMode',
@@ -174,16 +225,24 @@
     }
     // ******************Light Mode******************** //
     .light {
+        transition: ease 0.5s;
         background-color: map-get($colors, 'lightMode', 'greyishWhite');
         .container {
+            transition: ease 0.5s;
+
             color: map-get($colors, 'lightMode', 'devFinder');
             .header {
                 .toggle {
                     color: map-get($colors, 'lightMode', 'purple');
                 }
+                .toggle:hover {
+                    color: map-get($colors, 'lightMode', 'devFinder');
+                }
             }
             .searchForm {
                 input {
+                    transition: ease 0.5s;
+
                     box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
                     background-color: map-get(
                         $colors,
@@ -201,11 +260,14 @@
                 }
             }
             .profile-container {
+                transition: ease 0.5s;
+
                 box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
                 background-color: map-get($colors, 'lightMode', 'almostWhite');
                 color: map-get($colors, 'lightMode', 'purple');
                 .stats {
                     .stats-container {
+                        transition: ease 0.5s;
                         background-color: map-get(
                             $colors,
                             'lightMode',
