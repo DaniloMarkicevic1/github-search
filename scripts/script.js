@@ -14,6 +14,10 @@ let city = document.querySelector('.location');
 let website = document.querySelector('.website');
 let company = document.querySelector('.company');
 let twitter = document.querySelector('.twitter');
+let svgL = document.querySelector('.l1');
+let svgC = document.querySelector('.svgC');
+let svgW = document.querySelector('.svgW');
+let svgT = document.querySelector('.svgT');
 // Stats
 let repos = document.querySelector('.repos');
 let followers = document.querySelector('.following');
@@ -57,7 +61,7 @@ form.addEventListener('submit', (e) => {
     let inputValue = document.querySelector('#searchInput').value;
     e.preventDefault();
     console.log(inputValue);
-    fetch(`../${inputValue}.json`)
+    fetch(`https://api.github.com/users/${inputValue}`)
         .then((response) => response.json())
         .then((data) => {
             if (!data.name) {
@@ -75,13 +79,15 @@ form.addEventListener('submit', (e) => {
             if (data.location === null) {
                 city.innerHTML = 'Not Available';
                 city.classList.add('notAvailable');
+                svgL.classList.add('notAvailable');
             } else {
                 city.innerHTML = data.location;
             }
 
-            if (data.blog === null) {
+            if (!data.blog) {
                 website.classList.add('notAvailable');
                 website.innerHTML = 'Not Available';
+                svgW.classList.add('notAvailable');
             } else {
                 website.innerHTML = data.blog;
                 website.href = data.blog;
@@ -89,6 +95,7 @@ form.addEventListener('submit', (e) => {
             if (data.company === null) {
                 company.classList.add('notAvailable');
                 company.innerHTML = 'Not Available';
+                svgC.classList.add('notAvailable');
             } else {
                 company.innerHTML = data.company;
                 company.href = `https://${data.company}.com`;
@@ -104,6 +111,7 @@ form.addEventListener('submit', (e) => {
             if (data.twitter_username == null) {
                 twitter.classList.add('notAvailable');
                 twitter.innerHTML = 'Not Available';
+                svgT.classList.add('notAvailable');
             } else {
                 twitter.innerHTML = data.twitter_username;
                 twitter.href = `twitter.com/${data.twitter_username}`;

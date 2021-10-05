@@ -326,6 +326,11 @@
 * body .container .profile-container .links .links-right .notAvailable {
   opacity: 0.5;
 }
+* body .container .profile-container .links .links-left .notAvailable:hover,
+* body .container .profile-container .links .links-right .notAvailable:hover {
+  text-decoration: none;
+  cursor: unset;
+}
 * body .container .profile-container .links .links-left div,
 * body .container .profile-container .links .links-right div {
   display: flex;

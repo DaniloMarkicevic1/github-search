@@ -267,6 +267,11 @@
                         }
                         .notAvailable {
                             opacity: 0.5;
+
+                            &:hover {
+                                text-decoration: none;
+                                cursor: unset;
+                            }
                         }
                         div {
                             display: flex;
