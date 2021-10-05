@@ -30,16 +30,18 @@ toggle.addEventListener('click', (e) => {
         body.classList.remove('light');
     }
 });
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     let value = document.querySelector('input').value;
     console.log(value);
-    fetch(`../${value}.json`)
+    fetch(`../asdasd.json`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
             userName.innerHTML = data.name;
             userLink.href = data.html_url;
+            userLink.textContent = `@${data.login}`;
             avatar.src = data.avatar_url;
             userJoined.innerHTML = data.created_at;
             repos.innerHTML = data.public_repos;
@@ -50,9 +52,11 @@ form.addEventListener('submit', (e) => {
             website.href = data.blog;
             company.innerHTML = data.company;
             if (data.bio === null) {
-                bio.innerHTML = 'No bio in description';
+                bio.innerHTML = 'This profile has no bio';
+                bio.classList.add('no-bio');
             } else {
                 bio.innerHTML = data.bio;
+                bio.classList.remove('no-bio');
             }
 
             if (data.twitter_username == null) {

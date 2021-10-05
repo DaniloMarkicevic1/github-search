@@ -96,17 +96,79 @@
                     padding: 0 48px 0 230px;
                 }
                 .user {
-                    padding: 32px 69px 0 0px;
+                    padding: 32px 44px 0 0px;
                     @media screen and (min-width: 768px) {
                         padding: 0 159px 0 0;
+                    }
+                    @media screen and (min-width: 1440px) {
+                        position: relative;
+                        padding: 0;
+                    }
+                    div {
+                        display: flex;
+                        div {
+                            display: flex;
+                            flex-direction: column;
+                            padding-left: 20px;
+                            justify-content: center;
+                            @media screen and (min-width: 768px) {
+                                padding-left: 41px;
+                            }
+                            @media screen and (min-width: 1440px) {
+                                padding-left: 0px;
+                                padding-top: 40px;
+                                display: grid;
+                                align-items: center;
+                                grid-template-columns: repeat(2, 1fr);
+                                grid-template-rows: repeat(2, 1fr);
+                            }
+                            .userName {
+                                font-size: map-get($fontSize, 'l');
+                                font-weight: map-get($fontWeight, 'bold');
+                                @media screen and (min-width: 768px) {
+                                    font-size: map-get($fontSize, 'xxl');
+                                }
+                                @media screen and (min-width: 1440px) {
+                                    grid-column: 1;
+                                    grid-row: 1;
+                                }
+                            }
+                            .userLink {
+                                font-size: map-get($fontSize, 's');
+                                @media screen and (min-width: 768px) {
+                                    font-size: map-get($fontSize, 'l');
+                                }
+                                @media screen and (min-width: 1440px) {
+                                    grid-column: 1;
+                                    grid-row: 2;
+                                }
+                            }
+                            .userDate {
+                                font-size: map-get($fontSize, 's');
+                                @media screen and (min-width: 768px) {
+                                    font-size: map-get($fontSize, 'm');
+                                }
+                                @media screen and (min-width: 1440px) {
+                                    grid-column: 2;
+                                    grid-row: 1;
+                                    padding-left: 138px;
+                                }
+                            }
+                        }
                     }
                     .avatar {
                         width: 70px;
                         height: 70px;
                         border-radius: 50%;
+                        align-self: center;
                         @media screen and (min-width: 768px) {
                             width: 117px;
                             height: 117px;
+                        }
+                        @media screen and (min-width: 1440px) {
+                            position: absolute;
+                            left: -174px;
+                            top: 48px;
                         }
                     }
                     .userName {
@@ -117,9 +179,12 @@
                         }
                     }
                     .userLink {
+                        text-decoration: none;
                         font-size: map-get($fontSize, 's');
+                        color: map-get($colors, 'blue');
                         @media screen and (min-width: 768px) {
                             font-size: map-get($fontSize, 'l');
+                            align-self: flex-start;
                         }
                     }
                     .userDate {
@@ -135,6 +200,12 @@
                     @media screen and (min-width: 768px) {
                         font-size: map-get($fontSize, 'm');
                     }
+                    @media screen and (min-width: 1440px) {
+                        padding: 20px 0 0 0;
+                    }
+                    .no-bio {
+                        opacity: 0.7;
+                    }
                 }
                 .stats {
                     padding: 23px 0 0 0;
@@ -144,8 +215,17 @@
                         justify-content: space-evenly;
                         padding: 18px 14px 19px 15px;
                         border-radius: map-get($borderRadius, 'secondary');
+                        @media screen and (min-width: 768px) {
+                            padding-left: 32px;
+                            justify-content: flex-start;
+                            gap: 99px;
+                        }
                         div {
                             text-align: center;
+                            @media screen and (min-width: 768px) {
+                                text-align: left;
+                            }
+
                             h4 {
                                 font-size: map-get($fontSize, 'xs');
                                 font-weight: map-get($fontWeight, 'regular');
@@ -190,6 +270,12 @@
                                     font-size: map-get($fontSize, 'm');
                                 }
                             }
+                            a {
+                                text-decoration: none;
+                            }
+                            &:hover {
+                                text-decoration: underline;
+                            }
                         }
                     }
                 }
@@ -198,14 +284,19 @@
     }
     // ******************Dark Mode******************** //
     .dark {
-        transition: ease 0.5s;
+        transition: ease 0.2s;
         background-color: map-get($colors, 'darkMode', 'darkDMPurple');
         .container {
             color: map-get($colors, 'white');
+            .header {
+                .toggle:hover {
+                    color: map-get($colors, 'darkMode', 'hover');
+                }
+            }
         }
         .searchForm {
             input {
-                transition: ease 0.5s;
+                transition: ease 0.2s;
                 background-color: map-get($colors, 'darkMode', 'dmPurple');
                 color: map-get($colors, 'white');
             }
@@ -218,11 +309,11 @@
             }
         }
         .profile-container {
-            transition: ease 0.5s;
+            transition: ease 0.2s;
             background-color: map-get($colors, 'darkMode', 'dmPurple');
             .stats {
                 .stats-container {
-                    transition: ease 0.5s;
+                    transition: ease 0.2s;
                     background-color: map-get(
                         $colors,
                         'darkMode',
@@ -230,14 +321,19 @@
                     );
                 }
             }
+            .links {
+                a {
+                    color: map-get($colors, 'white');
+                }
+            }
         }
     }
     // ******************Light Mode******************** //
     .light {
-        transition: ease 0.5s;
+        transition: ease 0.2s;
         background-color: map-get($colors, 'lightMode', 'greyishWhite');
         .container {
-            transition: ease 0.5s;
+            transition: ease 0.2s;
 
             color: map-get($colors, 'lightMode', 'devFinder');
             .header {
@@ -250,7 +346,7 @@
             }
             .searchForm {
                 input {
-                    transition: ease 0.5s;
+                    transition: ease 0.2s;
 
                     box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
                     background-color: map-get(
@@ -269,14 +365,14 @@
                 }
             }
             .profile-container {
-                transition: ease 0.5s;
+                transition: ease 0.2s;
 
                 box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
                 background-color: map-get($colors, 'lightMode', 'almostWhite');
                 color: map-get($colors, 'lightMode', 'purple');
                 .stats {
                     .stats-container {
-                        transition: ease 0.5s;
+                        transition: ease 0.2s;
                         background-color: map-get(
                             $colors,
                             'lightMode',
