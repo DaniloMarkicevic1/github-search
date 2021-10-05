@@ -18,10 +18,27 @@ let twitter = document.querySelector('.twitter');
 let repos = document.querySelector('.repos');
 let followers = document.querySelector('.following');
 let following = document.querySelector('.followers');
-
+var months = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+];
 let dateString = (date) => {
     let string = new Date(date);
-    console.log(string);
+    let year = string.getFullYear().toString();
+    let month = string.getMonth().toString();
+    let day = string.getDay();
+
+    return `Joined: ${day} ${months[month]} ${year}`;
 };
 // Toggle
 toggle.addEventListener('click', (e) => {
@@ -43,32 +60,53 @@ form.addEventListener('submit', (e) => {
     fetch(`../${inputValue}.json`)
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
-            dateString(data.created_at);
-            userName.innerHTML = data.name;
+            if (!data.name) {
+                userName.innerHTML = data.login;
+            } else {
+                userName.innerHTML = data.name;
+            }
             userLink.href = data.html_url;
             userLink.textContent = `@${data.login}`;
             avatar.src = data.avatar_url;
-            userJoined.innerHTML = data.created_at;
+            userJoined.innerHTML = dateString(data.created_at);
             repos.innerHTML = data.public_repos;
             following.innerHTML = data.followers;
             followers.innerHTML = data.following;
-            city.innerHTML = data.location;
-            website.innerHTML = data.blog;
-            website.href = data.blog;
-            company.innerHTML = data.company;
+            if (data.location === null) {
+                city.innerHTML = 'Not Available';
+                city.classList.add('notAvailable');
+            } else {
+                city.innerHTML = data.location;
+            }
+
+            if (data.blog === null) {
+                website.classList.add('notAvailable');
+                website.innerHTML = 'Not Available';
+            } else {
+                website.innerHTML = data.blog;
+                website.href = data.blog;
+            }
+            if (data.company === null) {
+                company.classList.add('notAvailable');
+                company.innerHTML = 'Not Available';
+            } else {
+                company.innerHTML = data.company;
+                company.href = `https://${data.company}.com`;
+            }
+
             if (data.bio === null) {
                 bio.innerHTML = 'This profile has no bio';
                 bio.classList.add('no-bio');
             } else {
                 bio.innerHTML = data.bio;
-                bio.classList.remove('no-bio');
+                bio.classList.remove('notAvailable');
             }
-
             if (data.twitter_username == null) {
+                twitter.classList.add('notAvailable');
                 twitter.innerHTML = 'Not Available';
             } else {
                 twitter.innerHTML = data.twitter_username;
+                twitter.href = `twitter.com/${data.twitter_username}`;
             }
         });
 });

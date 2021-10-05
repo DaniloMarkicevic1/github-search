@@ -114,6 +114,7 @@
                     }
                     div {
                         display: flex;
+                        width: 100%;
                         div {
                             display: flex;
                             flex-direction: column;
@@ -153,6 +154,7 @@
                             }
                             .userDate {
                                 font-size: map-get($fontSize, 's');
+                                text-transform: capitalize;
                                 @media screen and (min-width: 768px) {
                                     font-size: map-get($fontSize, 'm');
                                 }
@@ -263,14 +265,17 @@
                             display: flex;
                             flex-direction: column;
                         }
+                        .notAvailable {
+                            opacity: 0.5;
+                        }
                         div {
                             display: flex;
                             padding: 0 0 16px 0;
                             .l1 {
-                                padding: 0 19px 0 0;
+                                margin: 0 19px 0 0;
                             }
-                            img {
-                                padding: 0px 13px 0 0;
+                            svg {
+                                margin: 0px 13px 0 0;
                             }
                             p {
                                 font-size: map-get($fontSize, 's');
@@ -331,6 +336,11 @@
                 }
             }
             .links {
+                svg {
+                    path {
+                        fill: map-get($colors, 'white');
+                    }
+                }
                 a {
                     color: map-get($colors, 'white');
                 }
@@ -400,6 +410,11 @@
                     }
                 }
                 .links {
+                    svg {
+                        path {
+                            fill: map-get($colors, 'lightMode', 'purple');
+                        }
+                    }
                     a {
                         color: map-get($colors, 'lightMode', 'purple');
                     }

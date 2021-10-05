@@ -131,6 +131,7 @@
 }
 * body .container .profile-container .user div {
   display: flex;
+  width: 100%;
 }
 * body .container .profile-container .user div div {
   display: flex;
@@ -184,6 +185,7 @@
 }
 * body .container .profile-container .user div div .userDate {
   font-size: 13px;
+  text-transform: capitalize;
 }
 @media screen and (min-width: 768px) {
   * body .container .profile-container .user div div .userDate {
@@ -320,6 +322,10 @@
     flex-direction: column;
   }
 }
+* body .container .profile-container .links .links-left .notAvailable,
+* body .container .profile-container .links .links-right .notAvailable {
+  opacity: 0.5;
+}
 * body .container .profile-container .links .links-left div,
 * body .container .profile-container .links .links-right div {
   display: flex;
@@ -327,11 +333,11 @@
 }
 * body .container .profile-container .links .links-left div .l1,
 * body .container .profile-container .links .links-right div .l1 {
-  padding: 0 19px 0 0;
+  margin: 0 19px 0 0;
 }
-* body .container .profile-container .links .links-left div img,
-* body .container .profile-container .links .links-right div img {
-  padding: 0px 13px 0 0;
+* body .container .profile-container .links .links-left div svg,
+* body .container .profile-container .links .links-right div svg {
+  margin: 0px 13px 0 0;
 }
 * body .container .profile-container .links .links-left div p,
 * body .container .profile-container .links .links-right div p {
@@ -380,6 +386,9 @@
   transition: ease 0.2s;
   background-color: #141d2f;
 }
+* .dark .profile-container .links svg path {
+  fill: #ffffff;
+}
 * .dark .profile-container .links a {
   color: #ffffff;
 }
@@ -421,6 +430,9 @@
 }
 * .light .container .profile-container .stats .stats-container div p {
   color: #2b3442;
+}
+* .light .container .profile-container .links svg path {
+  fill: #4b6a9b;
 }
 * .light .container .profile-container .links a {
   color: #4b6a9b;
