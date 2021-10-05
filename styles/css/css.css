@@ -39,8 +39,8 @@
   letter-spacing: 2.5px;
   text-transform: uppercase;
 }
-* body .container .header .toggle img {
-  padding: 0 0 0 16px;
+* body .container .header .toggle svg {
+  margin: 0 0 0 16px;
 }
 * body .container .searchForm {
   padding: 36px 0 0 0;
@@ -78,6 +78,7 @@
 }
 * body .container .searchForm button {
   background-color: #0079ff;
+  color: #ffffff;
   border: none;
   position: absolute;
   border-radius: 10px;
@@ -94,6 +95,10 @@
     right: 10px;
     font-size: 16px;
   }
+}
+* body .container .searchForm button:hover {
+  background-color: #60abff;
+  cursor: url("/assets/pointer.png"), pointer;
 }
 * body .container .profile-container {
   border-radius: 15px;
@@ -356,16 +361,15 @@
 * .dark .container .header .toggle:hover {
   color: #90a4d4;
 }
+* .dark .container .header .toggle:hover svg g {
+  fill: #90a4d4;
+}
 * .dark .searchForm input {
   transition: ease 0.2s;
   background-color: #1e2a47;
   color: #ffffff;
 }
 * .dark .searchForm ::placeholder {
-  color: #ffffff;
-}
-* .dark .searchForm button {
-  background-color: #0079ff;
   color: #ffffff;
 }
 * .dark .profile-container {
@@ -393,6 +397,9 @@
 * .light .container .header .toggle:hover {
   color: #222731;
 }
+* .light .container .header .toggle:hover svg path {
+  fill: #222731;
+}
 * .light .container .searchForm input {
   transition: ease 0.2s;
   box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
@@ -401,10 +408,6 @@
 }
 * .light .container .searchForm ::placeholder {
   color: #4b6a9b;
-}
-* .light .container .searchForm button {
-  background-color: #0079ff;
-  color: #ffffff;
 }
 * .light .container .profile-container {
   transition: ease 0.2s;
@@ -418,6 +421,9 @@
 }
 * .light .container .profile-container .stats .stats-container div p {
   color: #2b3442;
+}
+* .light .container .profile-container .links a {
+  color: #4b6a9b;
 }
 
 /*# sourceMappingURL=css.css.map */

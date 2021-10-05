@@ -33,8 +33,8 @@
                     align-items: center;
                     letter-spacing: 2.5px;
                     text-transform: uppercase;
-                    img {
-                        padding: 0 0 0 16px;
+                    svg {
+                        margin: 0 0 0 16px;
                     }
                 }
             }
@@ -69,6 +69,7 @@
                 }
                 button {
                     background-color: map-get($colors, 'blue');
+                    color: map-get($colors, 'white');
                     border: none;
                     position: absolute;
                     border-radius: map-get($borderRadius, 'secondary');
@@ -82,6 +83,13 @@
                         bottom: 9.5px;
                         right: 10px;
                         font-size: map-get($fontSize, 'l');
+                    }
+                    &:hover {
+                        background-color: map-get(
+                            $map: $colors,
+                            $key: 'lightBlue'
+                        );
+                        cursor: $cursor;
                     }
                 }
             }
@@ -291,6 +299,11 @@
             .header {
                 .toggle:hover {
                     color: map-get($colors, 'darkMode', 'hover');
+                    svg {
+                        g {
+                            fill: map-get($colors, 'darkMode', 'hover');
+                        }
+                    }
                 }
             }
         }
@@ -301,10 +314,6 @@
                 color: map-get($colors, 'white');
             }
             ::placeholder {
-                color: map-get($colors, 'white');
-            }
-            button {
-                background-color: map-get($colors, 'blue');
                 color: map-get($colors, 'white');
             }
         }
@@ -342,6 +351,11 @@
                 }
                 .toggle:hover {
                     color: map-get($colors, 'lightMode', 'devFinder');
+                    svg {
+                        path {
+                            fill: map-get($colors, 'lightMode', 'devFinder');
+                        }
+                    }
                 }
             }
             .searchForm {
@@ -358,10 +372,6 @@
                 }
                 ::placeholder {
                     color: map-get($colors, 'lightMode', 'purple');
-                }
-                button {
-                    background-color: map-get($colors, 'blue');
-                    color: map-get($colors, 'white');
                 }
             }
             .profile-container {
@@ -387,6 +397,11 @@
                                 );
                             }
                         }
+                    }
+                }
+                .links {
+                    a {
+                        color: map-get($colors, 'lightMode', 'purple');
                     }
                 }
             }
