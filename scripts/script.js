@@ -81,22 +81,28 @@ form.addEventListener('submit', (e) => {
                 city.classList.add('notAvailable');
                 svgL.classList.add('notAvailable');
             } else {
+                city.classList.remove('notAvailable');
+                svgL.classList.remove('notAvailable');
                 city.innerHTML = data.location;
             }
 
             if (!data.blog) {
                 website.classList.add('notAvailable');
-                website.innerHTML = 'Not Available';
                 svgW.classList.add('notAvailable');
+                website.innerHTML = 'Not Available';
             } else {
                 website.innerHTML = data.blog;
                 website.href = data.blog;
+                website.classList.remove('notAvailable');
+                svgW.classList.remove('notAvailable');
             }
             if (data.company === null) {
                 company.classList.add('notAvailable');
-                company.innerHTML = 'Not Available';
                 svgC.classList.add('notAvailable');
+                company.innerHTML = 'Not Available';
             } else {
+                company.classList.remove('notAvailable');
+                svgC.classList.remove('notAvailable');
                 company.innerHTML = data.company;
                 company.href = `https://${data.company}.com`;
             }
@@ -110,9 +116,11 @@ form.addEventListener('submit', (e) => {
             }
             if (data.twitter_username == null) {
                 twitter.classList.add('notAvailable');
-                twitter.innerHTML = 'Not Available';
                 svgT.classList.add('notAvailable');
+                twitter.innerHTML = 'Not Available';
             } else {
+                twitter.classList.remove('notAvailable');
+                svgT.classList.remove('notAvailable');
                 twitter.innerHTML = data.twitter_username;
                 twitter.href = `twitter.com/${data.twitter_username}`;
             }
