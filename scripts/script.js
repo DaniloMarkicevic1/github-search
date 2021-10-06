@@ -110,10 +110,9 @@ form.addEventListener('submit', (e) => {
                     company.classList.remove('notAvailable');
                     svgC.classList.remove('notAvailable');
                     company.innerHTML = data.company;
-
-                    // company.href = `https://${data.company
-                    //     .toLowerCase()
-                    //     .replace(/\s/g, '')}.com`;
+                    company.href = `https://${data.company
+                        .toLowerCase()
+                        .replace(/\s/g, '')}.com`;
                 }
                 if (data.bio === null) {
                     bio.innerHTML = 'This profile has no bio';
