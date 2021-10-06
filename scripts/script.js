@@ -61,8 +61,8 @@ toggle.addEventListener('click', (e) => {
 form.addEventListener('submit', (e) => {
     let input = document.querySelector('#searchInput');
     e.preventDefault();
-    // fetch(`https://api.github.com/users/${input.value}`)
-    fetch(`../asdasd.json`)
+    // fetch(`../asdasd.json`)
+    fetch(`https://api.github.com/users/${input.value}`)
         .then((response) => response.json())
         .then((data) => {
             if (data.message === 'Not Found') {
