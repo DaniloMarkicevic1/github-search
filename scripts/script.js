@@ -61,8 +61,8 @@ toggle.addEventListener('click', (e) => {
 form.addEventListener('submit', (e) => {
     let input = document.querySelector('#searchInput');
     e.preventDefault();
-    // fetch(`../asdasd.json`)
-    fetch(`https://api.github.com/users/${input.value}`)
+    // fetch(`https://api.github.com/users/${input.value}`)
+    fetch(`../asdasd.json`)
         .then((response) => response.json())
         .then((data) => {
             if (data.message === 'Not Found') {
@@ -111,9 +111,9 @@ form.addEventListener('submit', (e) => {
                     svgC.classList.remove('notAvailable');
                     company.innerHTML = data.company;
 
-                    company.href = `https://${data.company
-                        .toLowerCase()
-                        .replace(/\s/g, '')}.com`;
+                    // company.href = `https://${data.company
+                    //     .toLowerCase()
+                    //     .replace(/\s/g, '')}.com`;
                 }
                 if (data.bio === null) {
                     bio.innerHTML = 'This profile has no bio';
