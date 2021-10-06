@@ -2,12 +2,12 @@
 let body = document.querySelector('body');
 let toggle = document.querySelector('.toggle');
 let form = document.querySelector('.searchForm');
-// Username,Link, Joined
+let error = document.querySelector('.noResult');
+// User Data
+let avatar = document.querySelector('.avatar');
 let userName = document.querySelector('.userName');
 let userLink = document.querySelector('.userLink');
 let userJoined = document.querySelector('.userDate');
-let avatar = document.querySelector('.avatar');
-// Bio
 let bio = document.querySelector('.bio');
 // Links
 let city = document.querySelector('.location');
@@ -20,9 +20,10 @@ let svgW = document.querySelector('.svgW');
 let svgT = document.querySelector('.svgT');
 // Stats
 let repos = document.querySelector('.repos');
-let followers = document.querySelector('.following');
-let following = document.querySelector('.followers');
-var months = [
+let following = document.querySelector('.following');
+let followers = document.querySelector('.followers');
+
+let months = [
     'Jan',
     'Feb',
     'Mar',
@@ -42,9 +43,9 @@ let dateString = (date) => {
     let month = string.getMonth().toString();
     let day = string.getDay();
 
-    return `Joined: ${day} ${months[month]} ${year}`;
+    return `Joined ${day} ${months[month]} ${year}`;
 };
-// Toggle
+// Toggle Light&Dark Mode
 toggle.addEventListener('click', (e) => {
     if (body.classList.value === 'dark') {
         toggle.innerHTML =
@@ -58,71 +59,79 @@ toggle.addEventListener('click', (e) => {
 });
 
 form.addEventListener('submit', (e) => {
-    let inputValue = document.querySelector('#searchInput').value;
+    let input = document.querySelector('#searchInput');
     e.preventDefault();
-    console.log(inputValue);
-    fetch(`https://api.github.com/users/${inputValue}`)
+    // fetch(`../asdasd.json`)
+    fetch(`https://api.github.com/users/${input.value}`)
         .then((response) => response.json())
         .then((data) => {
-            if (!data.name) {
-                userName.innerHTML = data.login;
+            if (data.message === 'Not Found') {
+                error.innerHTML = 'No results';
+                input.value = '';
             } else {
-                userName.innerHTML = data.name;
-            }
-            userLink.href = data.html_url;
-            userLink.textContent = `@${data.login}`;
-            avatar.src = data.avatar_url;
-            userJoined.innerHTML = dateString(data.created_at);
-            repos.innerHTML = data.public_repos;
-            following.innerHTML = data.followers;
-            followers.innerHTML = data.following;
-            if (data.location === null) {
-                city.innerHTML = 'Not Available';
-                city.classList.add('notAvailable');
-                svgL.classList.add('notAvailable');
-            } else {
-                city.classList.remove('notAvailable');
-                svgL.classList.remove('notAvailable');
-                city.innerHTML = data.location;
-            }
+                if (!data.name) {
+                    userName.innerHTML = data.login;
+                } else {
+                    userName.innerHTML = data.name;
+                }
+                input.value = '';
+                error.innerHTML = '';
+                userLink.href = data.html_url;
+                userLink.textContent = `@${data.login}`;
+                avatar.src = data.avatar_url;
+                userJoined.innerHTML = dateString(data.created_at);
+                repos.innerHTML = data.public_repos;
+                followers.innerHTML = data.followers;
+                following.innerHTML = data.following;
+                if (data.location === null) {
+                    city.innerHTML = 'Not Available';
+                    city.classList.add('notAvailable');
+                    svgL.classList.add('notAvailable');
+                } else {
+                    city.classList.remove('notAvailable');
+                    svgL.classList.remove('notAvailable');
+                    city.innerHTML = data.location;
+                }
+                if (!data.blog) {
+                    website.classList.add('notAvailable');
+                    svgW.classList.add('notAvailable');
+                    website.innerHTML = 'Not Available';
+                } else {
+                    website.innerHTML = data.blog;
+                    website.href = data.blog;
+                    website.classList.remove('notAvailable');
+                    svgW.classList.remove('notAvailable');
+                }
+                if (data.company === null) {
+                    company.classList.add('notAvailable');
+                    svgC.classList.add('notAvailable');
+                    company.innerHTML = 'Not Available';
+                } else {
+                    company.classList.remove('notAvailable');
+                    svgC.classList.remove('notAvailable');
+                    company.innerHTML = data.company;
 
-            if (!data.blog) {
-                website.classList.add('notAvailable');
-                svgW.classList.add('notAvailable');
-                website.innerHTML = 'Not Available';
-            } else {
-                website.innerHTML = data.blog;
-                website.href = data.blog;
-                website.classList.remove('notAvailable');
-                svgW.classList.remove('notAvailable');
-            }
-            if (data.company === null) {
-                company.classList.add('notAvailable');
-                svgC.classList.add('notAvailable');
-                company.innerHTML = 'Not Available';
-            } else {
-                company.classList.remove('notAvailable');
-                svgC.classList.remove('notAvailable');
-                company.innerHTML = data.company;
-                company.href = `https://${data.company}.com`;
-            }
-
-            if (data.bio === null) {
-                bio.innerHTML = 'This profile has no bio';
-                bio.classList.add('no-bio');
-            } else {
-                bio.innerHTML = data.bio;
-                bio.classList.remove('notAvailable');
-            }
-            if (data.twitter_username == null) {
-                twitter.classList.add('notAvailable');
-                svgT.classList.add('notAvailable');
-                twitter.innerHTML = 'Not Available';
-            } else {
-                twitter.classList.remove('notAvailable');
-                svgT.classList.remove('notAvailable');
-                twitter.innerHTML = data.twitter_username;
-                twitter.href = `twitter.com/${data.twitter_username}`;
+                    company.href = `https://${data.company
+                        .toLowerCase()
+                        .replace(/\s/g, '')}.com`;
+                }
+                if (data.bio === null) {
+                    bio.innerHTML = 'This profile has no bio';
+                    bio.classList.add('no-bio');
+                } else {
+                    bio.innerHTML = data.bio;
+                    bio.classList.remove('notAvailable');
+                }
+                if (data.twitter_username == null) {
+                    twitter.classList.add('notAvailable');
+                    svgT.classList.add('notAvailable');
+                    twitter.innerHTML = 'Not Available';
+                } else {
+                    twitter.classList.remove('notAvailable');
+                    svgT.classList.remove('notAvailable');
+                    twitter.innerHTML = data.twitter_username;
+                    twitter.href = `twitter.com/${data.twitter_username}`;
+                }
             }
         });
 });
