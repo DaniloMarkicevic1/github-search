@@ -82,7 +82,7 @@
 * body .container .searchForm .noResult {
   position: absolute;
   color: red;
-  right: 120px;
+  right: 144px;
   bottom: 20px;
 }
 * body .container .searchForm button {

@@ -19,15 +19,15 @@
                 flex-direction: row;
                 justify-content: space-between;
                 .mainTitle {
-                    font-weight: map-get($fontWeight, 'bold');
-                    font-size: map-get($fontSize, 'xxl');
+                    font-weight: map-get($fontWeight, bold);
+                    font-size: map-get($fontSize, xxl);
                 }
                 .toggle:hover {
                     cursor: $cursor;
                 }
                 .toggle {
-                    font-weight: map-get($fontWeight, 'bold');
-                    font-size: map-get($fontSize, 's');
+                    font-weight: map-get($fontWeight, bold);
+                    font-size: map-get($fontSize, s);
                     display: flex;
                     flex-direction: row;
                     align-items: center;
@@ -58,53 +58,49 @@
                     border: none;
                     width: 100%;
                     padding: 17px 98px 18px 45px;
-                    border-radius: map-get($borderRadius, 'main');
-                    font-size: map-get($fontSize, 's');
-                    line-height: map-get($lineHeight, 'textLineHeight');
+                    border-radius: map-get($borderRadius, main);
+                    font-size: map-get($fontSize, s);
+                    line-height: map-get($lineHeight, textLineHeight);
                     letter-spacing: 0;
                     &:hover {
                         cursor: $cursor;
                     }
                     @media screen and (min-width: 768px) {
-                        font-size: map-get($fontSize, 'input');
+                        font-size: map-get($fontSize, input);
                         padding: 22px 121px 22px 80px;
                     }
                 }
                 .noResult {
-                    // display: none;
                     position: absolute;
                     color: red;
-                    right: 120px;
+                    right: 144px;
                     bottom: 20px;
                 }
                 button {
-                    background-color: map-get($colors, 'blue');
-                    color: map-get($colors, 'white');
+                    background-color: map-get($colors, blue);
+                    color: map-get($colors, white);
                     border: none;
                     position: absolute;
-                    border-radius: map-get($borderRadius, 'secondary');
+                    border-radius: map-get($borderRadius, secondary);
                     padding: 12.5px 16px;
-                    font-size: map-get($fontSize, 'button');
-                    font-weight: map-get($fontWeight, 'bold');
+                    font-size: map-get($fontSize, button);
+                    font-weight: map-get($fontWeight, bold);
                     right: 7px;
                     bottom: 7.5px;
                     @media screen and (min-width: 768px) {
                         padding: 12.5px 23px 13.5px 24px;
                         bottom: 9.5px;
                         right: 10px;
-                        font-size: map-get($fontSize, 'l');
+                        font-size: map-get($fontSize, l);
                     }
                     &:hover {
-                        background-color: map-get(
-                            $map: $colors,
-                            $key: 'lightBlue'
-                        );
+                        background-color: map-get($colors, lightBlue);
                         cursor: $cursor;
                     }
                 }
             }
             .profile-container {
-                border-radius: map-get($borderRadius, 'main');
+                border-radius: map-get($borderRadius, main);
                 margin: 16px 0 0 0;
                 padding: 0 24px 0;
                 @media screen and (min-width: 768px) {
@@ -142,10 +138,10 @@
                                 grid-template-rows: repeat(2, 1fr);
                             }
                             .userName {
-                                font-size: map-get($fontSize, 'l');
-                                font-weight: map-get($fontWeight, 'bold');
+                                font-size: map-get($fontSize, l);
+                                font-weight: map-get($fontWeight, bold);
                                 @media screen and (min-width: 768px) {
-                                    font-size: map-get($fontSize, 'xxl');
+                                    font-size: map-get($fontSize, xxl);
                                 }
                                 @media screen and (min-width: 1440px) {
                                     grid-column: 1;
@@ -153,9 +149,9 @@
                                 }
                             }
                             .userLink {
-                                font-size: map-get($fontSize, 's');
+                                font-size: map-get($fontSize, s);
                                 @media screen and (min-width: 768px) {
-                                    font-size: map-get($fontSize, 'l');
+                                    font-size: map-get($fontSize, l);
                                 }
                                 @media screen and (min-width: 1440px) {
                                     grid-column: 1;
@@ -163,10 +159,10 @@
                                 }
                             }
                             .userDate {
-                                font-size: map-get($fontSize, 's');
+                                font-size: map-get($fontSize, s);
                                 text-transform: capitalize;
                                 @media screen and (min-width: 768px) {
-                                    font-size: map-get($fontSize, 'm');
+                                    font-size: map-get($fontSize, m);
                                 }
                                 @media screen and (min-width: 1440px) {
                                     grid-column: 2;
@@ -192,36 +188,36 @@
                         }
                     }
                     .userName {
-                        font-size: map-get($fontSize, 'l');
-                        font-weight: map-get($fontWeight, 'bold');
+                        font-size: map-get($fontSize, l);
+                        font-weight: map-get($fontWeight, bold);
                         @media screen and (min-width: 768px) {
-                            font-size: map-get($fontSize, 'xxl');
+                            font-size: map-get($fontSize, xxl);
                         }
                     }
                     .userLink {
                         text-decoration: none;
-                        font-size: map-get($fontSize, 's');
-                        color: map-get($colors, 'blue');
+                        font-size: map-get($fontSize, s);
+                        color: map-get($colors, blue);
                         &:hover {
                             cursor: $cursor;
                         }
                         @media screen and (min-width: 768px) {
-                            font-size: map-get($fontSize, 'l');
+                            font-size: map-get($fontSize, l);
                             align-self: flex-start;
                         }
                     }
                     .userDate {
-                        font-size: map-get($fontSize, 's');
+                        font-size: map-get($fontSize, s);
                         @media screen and (min-width: 768px) {
-                            font-size: map-get($fontSize, 'm');
+                            font-size: map-get($fontSize, m);
                         }
                     }
                 }
                 .text {
                     padding: 33px 0 0;
-                    font-size: map-get($fontSize, 's');
+                    font-size: map-get($fontSize, s);
                     @media screen and (min-width: 768px) {
-                        font-size: map-get($fontSize, 'm');
+                        font-size: map-get($fontSize, m);
                     }
                     @media screen and (min-width: 1440px) {
                         padding: 20px 0 0 0;
@@ -237,7 +233,7 @@
                         flex-direction: row;
                         justify-content: space-evenly;
                         padding: 18px 14px 19px 15px;
-                        border-radius: map-get($borderRadius, 'secondary');
+                        border-radius: map-get($borderRadius, secondary);
                         @media screen and (min-width: 768px) {
                             padding-left: 32px;
                             justify-content: flex-start;
@@ -249,16 +245,16 @@
                                 text-align: left;
                             }
                             h4 {
-                                font-size: map-get($fontSize, 'xs');
-                                font-weight: map-get($fontWeight, 'regular');
+                                font-size: map-get($fontSize, xs);
+                                font-weight: map-get($fontWeight, regular);
                                 @media screen and (min-width: 768px) {
-                                    font-size: map-get($fontSize, 's');
+                                    font-size: map-get($fontSize, s);
                                 }
                             }
                             p {
-                                font-weight: map-get($fontWeight, 'bold');
+                                font-weight: map-get($fontWeight, bold);
                                 @media screen and (min-width: 768px) {
-                                    font-size: map-get($fontSize, 'xl');
+                                    font-size: map-get($fontSize, xl);
                                 }
                             }
                         }
@@ -287,9 +283,9 @@
                                 margin: 0px 13px 0 0;
                             }
                             a {
-                                font-size: map-get($fontSize, 's');
+                                font-size: map-get($fontSize, s);
                                 @media screen and (min-width: 768px) {
-                                    font-size: map-get($fontSize, 'm');
+                                    font-size: map-get($fontSize, m);
                                 }
                             }
                             .location,
@@ -322,15 +318,15 @@
     // ******************Dark Mode******************** //
     .dark {
         transition: ease 0.2s;
-        background-color: map-get($colors, 'darkMode', 'darkDMPurple');
+        background-color: map-get($colors, darkMode, darkDMPurple);
         .container {
-            color: map-get($colors, 'white');
+            color: map-get($colors, white);
             .header {
                 .toggle:hover {
-                    color: map-get($colors, 'darkMode', 'hover');
+                    color: map-get($colors, darkMode, hover);
                     svg {
                         g {
-                            fill: map-get($colors, 'darkMode', 'hover');
+                            fill: map-get($colors, darkMode, hover);
                         }
                     }
                 }
@@ -339,34 +335,30 @@
         .searchForm {
             input {
                 transition: ease 0.2s;
-                background-color: map-get($colors, 'darkMode', 'dmPurple');
-                color: map-get($colors, 'white');
+                background-color: map-get($colors, darkMode, dmPurple);
+                color: map-get($colors, white);
             }
             ::placeholder {
-                color: map-get($colors, 'white');
+                color: map-get($colors, white);
             }
         }
         .profile-container {
             transition: ease 0.2s;
-            background-color: map-get($colors, 'darkMode', 'dmPurple');
+            background-color: map-get($colors, darkMode, dmPurple);
             .stats {
                 .stats-container {
                     transition: ease 0.2s;
-                    background-color: map-get(
-                        $colors,
-                        'darkMode',
-                        'darkDMPurple'
-                    );
+                    background-color: map-get($colors, darkMode, darkDMPurple);
                 }
             }
             .links {
                 svg {
                     path {
-                        fill: map-get($colors, 'white');
+                        fill: map-get($colors, white);
                     }
                 }
                 a {
-                    color: map-get($colors, 'white');
+                    color: map-get($colors, white);
                 }
             }
         }
@@ -374,20 +366,20 @@
     // ******************Light Mode******************** //
     .light {
         transition: ease 0.2s;
-        background-color: map-get($colors, 'lightMode', 'greyishWhite');
+        background-color: map-get($colors, lightMode, greyishWhite);
         .container {
             transition: ease 0.2s;
 
-            color: map-get($colors, 'lightMode', 'devFinder');
+            color: map-get($colors, lightMode, devFinder);
             .header {
                 .toggle {
-                    color: map-get($colors, 'lightMode', 'purple');
+                    color: map-get($colors, lightMode, purple);
                 }
                 .toggle:hover {
-                    color: map-get($colors, 'lightMode', 'devFinder');
+                    color: map-get($colors, lightMode, devFinder);
                     svg {
                         path {
-                            fill: map-get($colors, 'lightMode', 'devFinder');
+                            fill: map-get($colors, lightMode, devFinder);
                         }
                     }
                 }
@@ -397,38 +389,30 @@
                     transition: ease 0.2s;
 
                     box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
-                    background-color: map-get(
-                        $colors,
-                        'lightMode',
-                        'almostWhite'
-                    );
-                    color: map-get($colors, 'lightMode', 'purple');
+                    background-color: map-get($colors, lightMode, almostWhite);
+                    color: map-get($colors, lightMode, purple);
                 }
                 ::placeholder {
-                    color: map-get($colors, 'lightMode', 'purple');
+                    color: map-get($colors, lightMode, purple);
                 }
             }
             .profile-container {
                 transition: ease 0.2s;
 
                 box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
-                background-color: map-get($colors, 'lightMode', 'almostWhite');
-                color: map-get($colors, 'lightMode', 'purple');
+                background-color: map-get($colors, lightMode, almostWhite);
+                color: map-get($colors, lightMode, purple);
                 .stats {
                     .stats-container {
                         transition: ease 0.2s;
                         background-color: map-get(
                             $colors,
-                            'lightMode',
-                            'greyishWhite'
+                            lightMode,
+                            greyishWhite
                         );
                         div {
                             p {
-                                color: map-get(
-                                    $colors,
-                                    'lightMode',
-                                    'darkPurple'
-                                );
+                                color: map-get($colors, lightMode, darkPurple);
                             }
                         }
                     }
@@ -436,11 +420,11 @@
                 .links {
                     svg {
                         path {
-                            fill: map-get($colors, 'lightMode', 'purple');
+                            fill: map-get($colors, lightMode, purple);
                         }
                     }
                     a {
-                        color: map-get($colors, 'lightMode', 'purple');
+                        color: map-get($colors, lightMode, purple);
                     }
                 }
             }
