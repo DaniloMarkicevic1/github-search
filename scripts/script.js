@@ -115,7 +115,7 @@ function fetchData(api) {
                     twitter.classList.remove('notAvailable');
                     svgT.classList.remove('notAvailable');
                     twitter.innerHTML = data.twitter_username;
-                    twitter.href = `twitter.com/${data.twitter_username}`;
+                    twitter.href = `https://twitter.com/${data.twitter_username}`;
                 }
             }
         });
