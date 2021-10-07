@@ -130,18 +130,21 @@ toggle.addEventListener('click', (e) => {
     if (body.classList.value === 'dark') {
         toggle.innerHTML = 'dark ' + svgDark;
         body.classList.add('light');
+        body.classList.remove('dark');
     } else {
         toggle.innerHTML = 'light ' + svgLight;
         body.classList.remove('light');
+        body.classList.add('dark');
     }
 });
 
-const octocat = 'https://api.github.com/users/octocat';
-fetchData(octocat);
+// const octocat = 'https://api.github.com/users/octocat';
+// const octocat = 'octocat.json';
+// fetchData(octocat);
 
 form.addEventListener('submit', (e) => {
     const input = document.querySelector('#searchInput');
-    const user = `https://api.github.com/users/${input.value}`;
+    const user = `./octocat.json`;
     e.preventDefault();
     fetchData(user);
 });

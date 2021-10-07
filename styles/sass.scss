@@ -73,8 +73,12 @@
                 .noResult {
                     position: absolute;
                     color: red;
-                    right: 144px;
-                    bottom: 20px;
+                    right: 34%;
+                    bottom: -20px;
+                    @media screen and (min-width: 500px) {
+                        right: 144px;
+                        bottom: 20px;
+                    }
                 }
                 button {
                     background-color: map-get($colors, blue);
@@ -322,6 +326,14 @@
         .container {
             color: map-get($colors, white);
             .header {
+                .toggle {
+                    .dark-text {
+                        display: none;
+                    }
+                    .light-text {
+                        display: unset;
+                    }
+                }
                 .toggle:hover {
                     color: map-get($colors, darkMode, hover);
                     svg {
@@ -363,68 +375,87 @@
             }
         }
     }
-    // ******************Light Mode******************** //
-    .light {
-        transition: ease 0.2s;
-        background-color: map-get($colors, lightMode, greyishWhite);
-        .container {
-            transition: ease 0.2s;
 
-            color: map-get($colors, lightMode, devFinder);
-            .header {
-                .toggle {
-                    color: map-get($colors, lightMode, purple);
-                }
-                .toggle:hover {
-                    color: map-get($colors, lightMode, devFinder);
-                    svg {
-                        path {
-                            fill: map-get($colors, lightMode, devFinder);
+    // ******************Light Mode******************** //
+    @media (prefers-color-scheme: light) {
+        .light {
+            transition: ease 0.2s;
+            background-color: map-get($colors, lightMode, greyishWhite);
+            .container {
+                transition: ease 0.2s;
+                color: map-get($colors, lightMode, devFinder);
+                .header {
+                    .toggle {
+                        color: map-get($colors, lightMode, purple);
+                        .light-text {
+                            display: none;
+                        }
+                        .dark-text {
+                            display: unset;
+                        }
+                        svg {
+                            path {
+                                fill: map-get($colors, lightMode, purple);
+                            }
                         }
                     }
-                }
-            }
-            .searchForm {
-                input {
-                    transition: ease 0.2s;
-
-                    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
-                    background-color: map-get($colors, lightMode, almostWhite);
-                    color: map-get($colors, lightMode, purple);
-                }
-                ::placeholder {
-                    color: map-get($colors, lightMode, purple);
-                }
-            }
-            .profile-container {
-                transition: ease 0.2s;
-
-                box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
-                background-color: map-get($colors, lightMode, almostWhite);
-                color: map-get($colors, lightMode, purple);
-                .stats {
-                    .stats-container {
-                        transition: ease 0.2s;
-                        background-color: map-get(
-                            $colors,
-                            lightMode,
-                            greyishWhite
-                        );
-                        div {
-                            p {
-                                color: map-get($colors, lightMode, darkPurple);
+                    .toggle:hover {
+                        color: map-get($colors, lightMode, devFinder);
+                        svg {
+                            path {
+                                fill: map-get($colors, lightMode, devFinder);
                             }
                         }
                     }
                 }
-                .links {
-                    svg {
-                        path {
-                            fill: map-get($colors, lightMode, purple);
+                .searchForm {
+                    input {
+                        transition: ease 0.2s;
+                        box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+                        background-color: map-get(
+                            $colors,
+                            lightMode,
+                            almostWhite
+                        );
+                        color: map-get($colors, lightMode, purple);
+                    }
+                    ::placeholder {
+                        color: map-get($colors, lightMode, purple);
+                    }
+                }
+                .profile-container {
+                    transition: ease 0.2s;
+                    box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+                    background-color: map-get($colors, lightMode, almostWhite);
+                    color: map-get($colors, lightMode, purple);
+                    .stats {
+                        .stats-container {
+                            transition: ease 0.2s;
+                            background-color: map-get(
+                                $colors,
+                                lightMode,
+                                greyishWhite
+                            );
+                            div {
+                                p {
+                                    color: map-get(
+                                        $colors,
+                                        lightMode,
+                                        darkPurple
+                                    );
+                                }
+                            }
                         }
                     }
-                    a {
-                        color: map-get($colors, lightMode, purple);
+                    .links {
+                        svg {
+                            path {
+                                fill: map-get($colors, lightMode, purple);
+                            }
+                        }
+                        a {
+                            color: map-get($colors, lightMode, purple);
+                        }
                     }
                 }
             }
