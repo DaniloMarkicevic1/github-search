@@ -138,13 +138,12 @@ toggle.addEventListener('click', (e) => {
     }
 });
 
-// const octocat = 'https://api.github.com/users/octocat';
-// const octocat = 'octocat.json';
-// fetchData(octocat);
+const octocat = 'https://api.github.com/users/octocat';
+fetchData(octocat);
 
 form.addEventListener('submit', (e) => {
     const input = document.querySelector('#searchInput');
-    const user = `./octocat.json`;
+    const user = `https://api.github.com/users/${input.value}`;
     e.preventDefault();
     fetchData(user);
 });
