@@ -138,8 +138,8 @@ toggle.addEventListener('click', (e) => {
     }
 });
 
-const octocat = 'https://api.github.com/users/octocat';
-fetchData(octocat);
+// const octocat = 'https://api.github.com/users/octocat';
+// fetchData(octocat);
 
 form.addEventListener('submit', (e) => {
     const input = document.querySelector('#searchInput');
