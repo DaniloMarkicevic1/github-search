@@ -383,6 +383,7 @@
     }
 
     // ******************Light Mode******************** //
+    // @media (prefers-color-scheme: light) {
     .light {
         transition: ease 0.2s;
         background-color: map-get($colors, lightMode, greyishWhite);
@@ -458,4 +459,5 @@
             }
         }
     }
+    // }
 }
